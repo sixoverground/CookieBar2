@@ -102,6 +102,9 @@ public class CookieBar {
                         if(dismissListener != null) {
                             dismissListener.onDismiss(DismissType.REPLACE_DISMISS);
                         }
+                        if (cookie.getParent() != null) {
+                            ((ViewGroup) cookie.getParent()).removeView(cookie);
+                        }
                         parent.addView(cookie);
                     }
                 });
